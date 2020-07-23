@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment#9</title>
+    <style>
+        img {
+            width: 100px;
+        }
+
+        #counter {
+            font-size: 32px;
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: underline;
+            color: #0000ee;
+            margin-right: 4px;
+        }
+        .format {
+
+width: 250px;
+height: 230px;
+
+}
+
+img {
+width: 300px;
+}
+
+/* Modal starts */
+
+/* The Modal (background) */
+
+.modal {
+display: none;
+position: fixed;
+z-index: 500;
+padding-top: 100px;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Content (image) */
+
+.modal-content {
+margin: auto;
+display: block;
+width: 80%;
+max-width: 700px;
+}
+
+/* Add Animation - Zoom in the Modal */
+
+.modal-open {
+animation-name: zoomIn;
+animation-duration: 0.6s;
+}
+
+@keyframes zoomIn {
+from {
+    transform: scale(0)
+}
+
+to {
+    transform: scale(1)
+}
+}
+
+.modal-close {
+animation-name: zoomOut;
+animation-duration: 0.6s;
+}
+
+@keyframes zoomOut {
+from {
+    transform: scale(1)
+}
+
+to {
+    transform: scale(0)
+}
+}
+
+
+
+/* The Close Button */
+
+.close {
+position: absolute;
+top: 50px;
+right: 10%;
+color: #f1f1f1;
+font-size: 40px;
+font-weight: normal;
+transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+color: #bbb;
+text-decoration: none;
+cursor: pointer;
+}
+
+/* modal ends */
+    </style>
+</head>
+
+<body>
+
+    <!-- chap#43-48 -->
+
+    <!-- 1. Show an alert box on click on a link. -->
+    <a href="#" onclick="alert('Clicked')">Click mee</a>
+
+
+
+    <!-- 2. Display some Mobile images in browser. On click on an
+image Show the message in alert to user.  -->
+    <div class="img">
+        <img src="img/huawei-y9s-2019-pakistan-priceoye-1vnu4.jpg" alt="" onclick="alert('Thank for purchase')">
+        <img src="img/t_19507.png" alt="" onclick="alert('Thank for purchase')">
+        <img src="img/TecnoCamon15Pro-b.jpg" alt="" onclick="alert('Thank for purchase')">
+        <img src="img/Xcell-View-in-Pakistan.jpg" alt="" onclick="alert('Thank for purchase')">
+    </div>
+
+    <!-- 3. Display 10 student records in table and each row should contain a delete
+ button. If you click on a button to delete a record, entire row should be
+ deleted. -->
+
+
+
+    <table id="myTable">
+        <tr>
+            <td>1</td>
+            <td>name</td>
+            <td><Button onclick="removeRow(this)">Delete Row</Button></td>
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>name</td>
+            <td><Button onclick="removeRow(this)">Delete Row</Button></td>
+
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>name</td>
+            <td><Button onclick="removeRow(this)">Delete Row</Button></td>
+
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>name</td>
+            <td><Button onclick="removeRow(this)">Delete Row</Button></td>
+
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>name</td>
+            <td><Button onclick="removeRow(this)">Delete Row</Button></td>
+
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>name</td>
+            <td><Button onclick="removeRow(this)">Delete Row</Button></td>
+
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>name</td>
+            <td><Button onclick="removeRow(this)">Delete Row</Button></td>
+
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>name</td>
+            <td><Button onclick="removeRow(this)">Delete Row</Button></td>
+
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>name</td>
+            <td><Button onclick="removeRow(this)">Delete Row</Button></td>
+
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>name</td>
+            <td><Button onclick="removeRow(this)">Delete Row</Button></td>
+
+        </tr>
+
+
+    </table>
+
+    <!-- 4. Display an image in browser. Change the picture on mouseover and set the
+ first picture on mouseout. -->
+
+    <img src="img/TecnoCamon15Pro-b.jpg" alt="" onmouseover="this.src='img/t_19507.png'"
+        onmouseout="this.src='img/TecnoCamon15Pro-b.jpg'" />
+
+
+
+    <!-- 5. Show a counter in browser. Counter should increase on click on increase
+     button and decrease on click on decrease button. And show updated counter
+     value in browser. -->
+
+
+    <div id="counter"></div>
+    <button onclick="increase()">Add</button>
+    <button onclick="decrease()">Sub</button>
+
+
+    <!-- chap#43-48 -->
+
+    <!-- // 2. Suppose in your webpage there is content area in which
+// you have entered your item details, but user can only see
+// some details on first look. When user clicks on “Read
+// more" button, full detail of that particular item will be
+// displayed. -->
+    <div id="para">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis autem quidem fugit? Perspiciatis alias vero
+            voluptatem voluptates eligendi ipsa, saepe, perferendis aspernatur provident minus, eos dolorum voluptatum
+            obcaecati aperiam voluptas.>>>
+        </p>
+        <a href="#" onclick="showMore()">Show More</a>
+    </div>
+
+    <!-- 49-52 -->
+    <!-- // 1. Create a signup form and display form data in your web
+// page on submission. -->
+    <form action="javasript:Void(0);" onsubmit="singup()">
+        <label for="userName">Name</label>
+        <input type="text" name="userName" id="userName">
+        <label for="email">E-mail</label>
+        <input type="text" name="email" id="email">
+        <label for="pass">Password</label>
+        <input type="password" name="pass" id="pass">
+        <label for="cpass">Confirm Password</label>
+        <input type="password" name="cpass" id="cpass">
+        <button type="submit">SingUp</button>
+    </form>
+    <br />
+    <div id="singUpDiv"></div>
+
+    <!-- q3 -->
+
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">This
+                            field is required.</label>
+                        <input type="text" name="fullName" id="fullName">
+                    </div>
+                    <div>
+                        <label>EMP Code</label>
+                        <input type="text" name="empCode" id="empCode">
+                    </div>
+                    <div>
+                        <label>Salary</label>
+                        <input type="text" name="salary" id="salary">
+                    </div>
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="city" id="city">
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>EMP Code</th>
+                            <th>Salary</th>
+                            <th>City</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 53-58 -->
+    <!-- 1 -->
+    <div id="img">
+
+    </div>
+
+    <!-- Modal work -->
+    <div id="modal" class="modal">
+        <span class="close" id="modal-close" onclick="onClosedImagModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+    <!-- 2 -->
+    <p id="zoom" style="font-size: 10px;">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, amet earum quibusdam officiis doloremque
+        necessitatibus ullam magni quos, quas dicta nemo aperiam in et beatae molestias iure libero aspernatur
+        asperiores?
+    </p>
+    <button onclick="zoomIn()">zoom in</button>
+    <button onclick="zoomOut()">zoom out</button>
+
+    <!-- 58-67 -->
+    <!-- q1 -->
+
+
+    <div>
+        <h1> DOM </h1>
+        <div id="form-content" class="content">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" />
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" />
+            <label for="email">Email</label>
+            <input type="text" id="e-mail" />
+        </div>
+        <div id="main-content" class="content">
+            <p class="render"> First Name : Alex</p>
+            <p class="render" id="lastName">Last Name: Bank</p>
+            <p class="render"> Email : alexbank@example.com</p>
+            <p class="render"> Country : Pakistan </p>
+            <p class="render"> contact : +92 300 1234567</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+
+</html
